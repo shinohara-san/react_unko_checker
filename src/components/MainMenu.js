@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import firebase from "../firebase";
-import Icon from "../dogs.jpg";
+import Icon from "../img/dogs.jpg";
 
 function MainMenu() {
   const auth = firebase.auth();
@@ -13,7 +13,6 @@ function MainMenu() {
   const [kotsuVal, setKotsuVal] = useState([]);
   //チョコのチェック処理
   const handleChokoCheck = e => {
-    console.log(e.target.value);
     // change したのはいいとして、ON なのか OFF なのか判定する必要がある
     if (chokoVal.includes(e.target.value)) {
       // すでに含まれていれば OFF したと判断し、
@@ -55,11 +54,14 @@ function MainMenu() {
       return;
     }
 
+    const chokoResult = chokoVal.indexOf("ちょこまん") === 0 ? true : false;
+    const kotsuResult = kotsuVal.indexOf("こたろ") === 0 ? true : false;
+
     const { uid, photoURL } = auth.currentUser;
     ref.add({
       time: val,
-      choko: Boolean(chokoVal),
-      kotsu: Boolean(kotsuVal),
+      choko: chokoResult,
+      kotsu: kotsuResult,
       createdAt: getNowDatetime(),
       uid,
       photoURL,
@@ -75,7 +77,7 @@ function MainMenu() {
         })
         .catch(function(error) {
             // The document probably doesn't exist.
-            console.error("Error updating document: ", error);
+            alert("エラーが発生しました。");
       });
     })
     .catch(function(error) {

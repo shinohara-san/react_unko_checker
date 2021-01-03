@@ -8,7 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import MainMenu from "./components/MainMenu";
 import ResultPage from "./components/ResultPage";
-import GoogleIcon from "./googlelogo.png";
+import GoogleIcon from "./img/googlelogo.png";
 
 // firebase.analytics();
 
