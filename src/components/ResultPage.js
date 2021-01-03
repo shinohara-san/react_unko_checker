@@ -30,14 +30,14 @@ function ResultPage() {
   return (
     <>
       {results.map(result => (
-        <div key={result.id}>
+        <div key={result.id} style={{margin: "5px"}}>
           <div>{result.time}</div>
           <div>{result.choko ? "ちょこした💩" : "ちょこしてない❌"}</div>
           <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>
           <div>{result.createdAt}</div>
         </div>
       ))}
-      <div><Link to="/" style={{color: 'green', fontWeight: "bold"}}>戻る</Link></div>
+      <div style={{margin: "20px"}}><Link to="/" className="backbutton">Back</Link></div>
     </>
   )
 }

@@ -8,6 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import MainMenu from "./components/MainMenu";
 import ResultPage from "./components/ResultPage";
+import GoogleIcon from "./googlelogo.png";
 
 // firebase.analytics();
 
@@ -46,7 +47,8 @@ function SignIn() {
     //ボタンをクリックするとポップアップが表示される
   }
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button onClick={signInWithGoogle} className="signin_button">Sign in with Google<img src={GoogleIcon} alt="googlelogo" className="googlelogo"/></button>
+    
   )
 }
 
