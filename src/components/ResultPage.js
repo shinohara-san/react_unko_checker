@@ -24,13 +24,13 @@ function ResultPage() {
   }, []);
   
   if (loading) {
-    return <div>Loading...</div>
+    return <div className="loading">Loading...</div>
   }
   
   return (
     <>
       {results.map(result => (
-        <div key={result.id} style={{margin: "5px"}}>
+        <div key={result.id} className="result">
           <div>{result.time}</div>
           <div>{result.choko ? "ちょこした💩" : "ちょこしてない❌"}</div>
           <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>

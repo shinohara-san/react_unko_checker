@@ -9,10 +9,11 @@ function MainMenu() {
   const [val, setVal] = useState('');
   const handleChange = e => setVal(e.target.value);
   //チェックボックス
-  const [chokoVal, setChokoVal] = useState("");
-  const [kotsuVal, setKotsuVal] = useState("");
+  const [chokoVal, setChokoVal] = useState([]);
+  const [kotsuVal, setKotsuVal] = useState([]);
   //チョコのチェック処理
   const handleChokoCheck = e => {
+    console.log(e.target.value);
     // change したのはいいとして、ON なのか OFF なのか判定する必要がある
     if (chokoVal.includes(e.target.value)) {
       // すでに含まれていれば OFF したと判断し、
@@ -21,7 +22,7 @@ function MainMenu() {
     } else {
       // そうでなければ ON と判断し、
       // イベント発行元を末尾に加えた配列を set し直す
-      setChokoVal(e.target.value);
+      setChokoVal([...chokoVal, e.target.value]);
       // setChokoVal([...chokoVal, e.target.value]);
       // state は直接は編集できない
       // つまり val.push(e.target.value) はNG ❌
@@ -32,7 +33,7 @@ function MainMenu() {
     if (kotsuVal.includes(e.target.value)) {
       setKotsuVal(kotsuVal.filter(item => item !== e.target.value));
     } else {
-      setKotsuVal(e.target.value);
+      setKotsuVal([...kotsuVal, e.target.value]);
     }
   }
 
@@ -69,7 +70,8 @@ function MainMenu() {
           id: docRef.id
         })
         .then(function() {
-            console.log("Document successfully saved!");
+            // console.log("Document successfully saved!");
+          alert("散歩お疲れ様でした。");
         })
         .catch(function(error) {
             // The document probably doesn't exist.
