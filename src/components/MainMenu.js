@@ -73,6 +73,9 @@ function MainMenu() {
         })
         .then(function() {
           alert("散歩お疲れ様でした。");
+          setVal("");
+          setChokoVal([]);
+          setKotsuVal([]);
         })
         .catch(function(error) {
           console.log(error);
