@@ -34,6 +34,7 @@ function ResultPage() {
           <div>{result.time} {result.createdAt}</div>
           <div>{result.choko ? "ちょこした💩" : "ちょこしてない❌"}</div>
           <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>
+          <div>散歩 by &lt;{result.uid === "OVHzF9XaYDaJvlN0mkbc4aVqyMH3" ? "母ちゃん" : "ゆうき"}&gt;</div>
         </div>
       ))}
       <div style={{ margin: "20px" }}>
