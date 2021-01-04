@@ -36,7 +36,9 @@ function ResultPage() {
           <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>
         </div>
       ))}
-      <div style={{margin: "20px"}}><Link to="/" className="backbutton">Back</Link></div>
+      <div style={{ margin: "20px" }}>
+        <Link to="/" className="backbutton">Back</Link>
+      </div>
     </>
   )
 }

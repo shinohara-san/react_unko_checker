@@ -72,16 +72,14 @@ function MainMenu() {
           id: docRef.id
         })
         .then(function() {
-            // console.log("Document successfully saved!");
           alert("散歩お疲れ様でした。");
         })
         .catch(function(error) {
-            // The document probably doesn't exist.
-            alert("エラーが発生しました。");
+          console.log(error);
       });
     })
     .catch(function(error) {
-    console.error("Error adding document: ", error);
+    alert("エラーが発生しました。");
   });
   }
 
