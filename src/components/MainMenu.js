@@ -68,7 +68,6 @@ function MainMenu() {
       photoURL,
     })
       .then(function (docRef) {
-        // console.log(docRef.id);
         ref.doc(docRef.id).update({
           id: docRef.id
         })
