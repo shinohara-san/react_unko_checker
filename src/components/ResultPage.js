@@ -1,9 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import firebase from "../firebase";
-import { Link } from 'react-router-dom';
 import Navbar from "./Navbar";
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignIn from "./SignIn";
 
 function ResultPage(props) {
+
+  const [user] = useAuthState(props.auth);
+  return (
+    <>
+      <div class="result_container">
+        {user ? <ResultPart /> : <SignIn />}
+        {user ? <Navbar auth={props.auth} /> : ""}
+      </div>
+    </>
+  )
+}
+
+function ResultPart() {
   const [ results, setResults ] = useState([]);
   const [ loading, setLoading ] = useState(false);
   const ref = firebase.firestore().collection("results");
@@ -31,24 +45,19 @@ function ResultPage(props) {
       </>
     ) 
   }
-  
+
   return (
-    <>
-      <div class="result_container">
-        <div class="results">
-          {results.map(result => (
-            <div key={result.id} className="result">
-              <div>{result.time} {result.createdAt}</div>
-              <div>{result.choko ? "ちょこした💩" : "ちょこしてない❌"}</div>
-              <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>
-              <div>散歩 by {result.uid === "OVHzF9XaYDaJvlN0mkbc4aVqyMH3" ? "母ちゃん" : "ゆうき"}</div>
-            </div>
-          ))}
-          </div>
-        <Navbar auth={props.auth} />
+    <div class="results">
+      {results.map(result => (
+        <div key={result.id} className="result">
+          <div>{result.time} {result.createdAt}</div>
+          <div>{result.choko ? "ちょこした💩" : "ちょこしてない❌"}</div>
+          <div>{result.kotsu ? "こつした💩" : "こつしてない❌"}</div>
+          <div>散歩 by {result.uid === "OVHzF9XaYDaJvlN0mkbc4aVqyMH3" ? "母ちゃん" : "ゆうき"}</div>
+        </div>
+        ))}
       </div>
-    </>
-  )
+  );
 }
 
 export default ResultPage;
