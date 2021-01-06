@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import firebase from "../firebase";
 import Icon from "../img/dogs.jpg";
+import Navbar from './Navbar';
 
 function MainMenu() {
   const auth = firebase.auth();
@@ -87,7 +88,7 @@ function MainMenu() {
   }
 
   return (
-    <div>
+    <>
     <div className="imgContainer">
       <img src={ Icon } className="img" alt="dogs"/>
     </div>
@@ -134,8 +135,9 @@ function MainMenu() {
         <div>
           <button id="send" onClick={sendData}>送信</button>
         </div>
-    </form>
-    </div>
+      </form>
+      <Navbar auth={ auth }/>
+    </>
   );
 }
 

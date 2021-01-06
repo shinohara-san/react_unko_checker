@@ -12,6 +12,7 @@ header {
   font-size: 34px;
   padding: 13px 0;
   height: 8%;
+  width: 100%;
 }
 
 a {
@@ -26,8 +27,8 @@ a {
   height: 100%;
 }
 
-header{
-  width: 100%;
+section {
+  height: 92%;
 }
 
 .App-header{
@@ -55,6 +56,10 @@ header{
 .dogLabel{
   font-size: 30px;
   padding-top: 20px;
+}
+
+form {
+  height: 34%;
 }
 
 label[for="morning"]{
@@ -87,16 +92,16 @@ label[for="kotsu"]{
     font-size: 19px;
 }
 
-.signOut{
+/* .signOut{
   padding: 20px;
-}
+} */
 
-.signoutButton{
+/* .signoutButton{
   width: 100px;
   border: none;
   background-color: aqua;
   text-decoration: underline;
-}
+} */
 
 .signin_button{
   text-align: center;
@@ -124,7 +129,31 @@ label[for="kotsu"]{
   margin-top: 70%;
 }
 
+.navbar_container{
+  display: flex;
+  justify-content: space-around;
+  background-color: blue;
+  height: 16%;
+}
+
+.navbar_container > div {
+  color: white;
+  padding-top: 25px;
+}
+
+i{
+  font-size: 29px;
+}
+
+.result_container{
+  height: 92%;
+}
+
+.results{
+  height: 82%;
+}
+
 .result{
-  margin-top:15px;
-  font-size: 20px;
+  margin-top: 14px;
+  font-size: 15px;
 }
