@@ -1,3 +1,7 @@
+# スマホサイズで使う用
+
+うちの犬がう◯こしたかどうか記録、共有するだけ。
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
