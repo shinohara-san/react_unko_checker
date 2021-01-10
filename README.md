@@ -1,7 +1,7 @@
 # うんこチェッカー(React ver.)
 
-React勉強用に以前jQuery使って作ったやつをReact使って作り直しました。
-うちの犬がう◯こしたかどうか記録、共有するだけ。
+React勉強用に以前jQuery使って作ったやつをReact使って作り直しました。\
+うちの犬がう◯こしたかどうか記録、共有するだけ。\
 スマホサイズでの使用のみを想定してます。
 
 # Getting Started with Create React App
